@@ -1,6 +1,4 @@
-module Exercism.HelloWorld (
-    hello
-) where
+module Exercism.HelloWorld (hello) where
 
 {-
     Exercise Guidelines
