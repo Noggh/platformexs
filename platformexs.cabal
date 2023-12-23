@@ -27,7 +27,6 @@ library
   exposed-modules:
       Exercism.Bob
       Exercism.HelloWorld
-      Lib.Helpers
   other-modules:
       Paths_platformexs
   autogen-modules:
