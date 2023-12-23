@@ -1,18 +1,20 @@
-import Test.Hspec        (Spec, it, shouldBe, describe, context)
-import Test.Hspec.Runner (configFailFast, defaultConfig, hspecWith)
+{-# LANGUAGE OverloadedStrings #-}
 
-import Exercism.HelloWorld (hello)
+import           BobSpec             (bobSpecs)
+import           Exercism.HelloWorld (hello)
+import           Test.Hspec          (Spec, describe, it, shouldBe)
+import           Test.Hspec.Runner   (configFailFast, defaultConfig, hspecWith)
 
 main :: IO ()
-main = hspecWith defaultConfig {configFailFast = True} specs
+main = hspecWith defaultConfig {configFailFast = True} mainSpecs
 
-specs :: Spec
-specs = do
+mainSpecs :: Spec
+mainSpecs = do
     exercismSpecs
+    bobSpecs
 
 exercismSpecs :: Spec
 exercismSpecs = do
-    context "Exercism" $ do
-        describe "HelloWorld.hello" $ do
-            it "is \"Hello, World!\"" $ do
-                hello `shouldBe` "Hello, World!"
+    describe "hello" $ do
+        it "is \"Hello, World!\"" $ do
+            hello `shouldBe` "Hello, World!"
