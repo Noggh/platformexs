@@ -17,15 +17,10 @@ newtype Convention = Convention { unconv :: Prompt -> Maybe Reply }
 
 conventions = [calmDownConvention, chillOutConvention, sureConvention, silenceConvention]
 
-sureConvention = Convention $ \p ->
-    T.stripSuffix "?" (T.stripEnd p) >> Just "Sure."
+sureConvention = Convention $ \p ->T.stripSuffix "?" (T.stripEnd p) >> Just "Sure."
 
-chillOutConvention = Convention $ \p ->
-    guard (liftM2 (&&) (T.all C.isUpper) (not . T.null) $ T.filter C.isAlpha p) >> Just "Whoa, chill out!"
+chillOutConvention = Convention $ \p -> guard (liftM2 (&&) (T.all C.isUpper) (not . T.null) $ T.filter C.isAlpha p) >> Just "Whoa, chill out!"
 
-calmDownConvention = Convention $ \p -> (,) <$> unconv chillOutConvention p
-                                            <*> unconv sureConvention p
-                                            >> Just "Calm down, I know what I'm doing!"
+calmDownConvention = Convention $ \p -> (,) <$> unconv chillOutConvention p <*> unconv sureConvention p >> Just "Calm down, I know what I'm doing!"
 
-silenceConvention = Convention $ \p ->
-    guard (T.all C.isSpace p) >> Just "Fine. Be that way!"
+silenceConvention = Convention $ \p -> guard (T.all C.isSpace p) >> Just "Fine. Be that way!"
