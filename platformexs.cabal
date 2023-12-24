@@ -27,6 +27,7 @@ library
   exposed-modules:
       Exercism.Bob
       Exercism.HelloWorld
+      Exercism.Luhn
   other-modules:
       Paths_platformexs
   autogen-modules:
@@ -59,6 +60,7 @@ test-suite platformexs-test
   main-is: Spec.hs
   other-modules:
       BobSpec
+      LuhnSpec
       Paths_platformexs
   autogen-modules:
       Paths_platformexs
