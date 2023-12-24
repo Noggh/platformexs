@@ -22,4 +22,4 @@ score = sum . L.reverse . zipWith (curry parseDigit) [1..] . unpack . reverse
 
 validScore = (== 0) . (`rem` 10)
 
-isValid s = maybe False (validScore . score) (parseCreditCard (pack s))
+isValid s = maybe False (validScore . score) (parseCreditCard $ pack s)
