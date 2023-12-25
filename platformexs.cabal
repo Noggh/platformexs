@@ -28,6 +28,7 @@ library
       Exercism.Bob
       Exercism.HelloWorld
       Exercism.Luhn
+      Exercism.WordCount
   other-modules:
       Paths_platformexs
   autogen-modules:
@@ -61,6 +62,7 @@ test-suite platformexs-test
   other-modules:
       BobSpec
       LuhnSpec
+      WordCountSpec
       Paths_platformexs
   autogen-modules:
       Paths_platformexs

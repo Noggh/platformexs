@@ -1,7 +1,7 @@
 import           BobSpec             (bobSpecs)
 import           LuhnSpec            (luhnSpecs)
-import           Exercism.HelloWorld (hello)
-import           Test.Hspec          (Spec, describe, it, shouldBe)
+import           WordCountSpec       (wordCountSpecs)
+import           Test.Hspec          (Spec)
 import           Test.Hspec.Runner   (configFailFast, defaultConfig, hspecWith)
 
 main :: IO ()
@@ -11,3 +11,4 @@ mainSpecs :: Spec
 mainSpecs = do
     bobSpecs
     luhnSpecs
+    wordCountSpecs
