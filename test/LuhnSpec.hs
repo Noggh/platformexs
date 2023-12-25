@@ -3,7 +3,6 @@ module LuhnSpec (luhnSpecs) where
 
 import Data.Foldable     (for_)
 import Test.Hspec        (Spec, describe, it, shouldBe)
-import Test.Hspec.Runner (configFailFast, defaultConfig, hspecWith)
 
 import Exercism.Luhn (isValid)
 
