@@ -29,6 +29,7 @@ library
       Exercism.HelloWorld
       Exercism.Luhn
       Exercism.WordCount
+      Exercism.Wordy
   other-modules:
       Paths_platformexs
   autogen-modules:
@@ -38,6 +39,7 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , parsec
     , text
   default-language: Haskell2010
 
@@ -52,6 +54,7 @@ executable platformexs-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , parsec
     , platformexs
     , text
   default-language: Haskell2010
@@ -72,6 +75,7 @@ test-suite platformexs-test
   build-depends:
       base >=4.7 && <5
     , hspec
+    , parsec
     , platformexs
     , text
   default-language: Haskell2010
