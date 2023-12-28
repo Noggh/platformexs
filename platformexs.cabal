@@ -68,6 +68,7 @@ test-suite platformexs-test
       BobSpec
       LuhnSpec
       WordCountSpec
+      WordySpec
       Paths_platformexs
   autogen-modules:
       Paths_platformexs
