@@ -1,6 +1,7 @@
 import           BobSpec             (bobSpecs)
 import           LuhnSpec            (luhnSpecs)
 import           WordCountSpec       (wordCountSpecs)
+import           WordySpec           (wordySpecs)
 import           Test.Hspec          (Spec)
 import           Test.Hspec.Runner   (configFailFast, defaultConfig, hspecWith)
 
@@ -12,3 +13,4 @@ mainSpecs = do
     bobSpecs
     luhnSpecs
     wordCountSpecs
+    wordySpecs
