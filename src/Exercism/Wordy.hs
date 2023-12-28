@@ -12,7 +12,7 @@ import           Control.Monad              (void)
 import           Data.Text                  (Text, pack)
 import           Data.Void                  (Void)
 import           Text.Megaparsec            (MonadParsec (try), Parsec, choice,
-                                             parseMaybe, parseTest)
+                                             parseMaybe)
 import           Text.Megaparsec.Char       (space1, string')
 import qualified Text.Megaparsec.Char.Lexer as L
 
