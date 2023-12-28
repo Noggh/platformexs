@@ -6,8 +6,6 @@ import           Data.Foldable  (for_)
 import           Exercism.Wordy (answer)
 import           Test.Hspec     (Spec, describe, it, shouldBe)
 
--- >>> answer "What is 5 plus 5?"
-
 wordySpecs :: Spec
 wordySpecs = describe "answer" $ for_ cases test
   where

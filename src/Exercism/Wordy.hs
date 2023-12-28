@@ -20,7 +20,10 @@ type Parser = Parsec Void Text
 
 answer t = parseMaybe parseInput (pack t) >>= \case Return s -> Just $ toInteger s
 
+lexeme :: Parser a -> Parser a
 lexeme  = L.lexeme parseSpace
+
+integer :: Parser Int
 integer = lexeme $ L.signed parseSpace L.decimal
 
 parseInput :: Parser (Comp Int)
@@ -28,17 +31,20 @@ parseInput = try $ do
     void $ lexeme $ string' "what is"
     foldl1 (<**>) <$> parseOpsUntilEnd
 
+parseOpsUntilEnd :: Parser [Comp Int]
 parseOpsUntilEnd = go []
     where go xs = do
             comp <- lexeme parsePattern
             case comp of Return _ -> pure $ reverse $ comp : xs
                          _        -> go $ comp : xs
 
+parsePattern :: Parser (Comp Int)
 parsePattern = do
     s <- lexeme integer
     parseOneOp >>= \case Nothing -> pure . Return $ s
                          Just o  -> pure . Perf s $ o
 
+parseOneOp :: Parser (Maybe Operation)
 parseOneOp = choice
     [ Just Plus         <$ string' "plus"
     , Just Minus        <$ string' "minus"
@@ -47,6 +53,7 @@ parseOneOp = choice
     , Nothing           <$ string' "?"
     ]
 
+parseSpace :: Parser ()
 parseSpace = L.space space1 (L.skipLineComment "//") (L.skipBlockComment "/*" "*/")
 
 data Comp a where
@@ -66,4 +73,3 @@ run DividedBy    = div
 
 data Operation = Plus | MultipliedBy | Minus | DividedBy | End
     deriving (Show)
-
