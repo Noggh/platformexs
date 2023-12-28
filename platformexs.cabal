@@ -39,7 +39,8 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
-    , parsec
+    , megaparsec
+    , mtl
     , text
   default-language: Haskell2010
 
@@ -54,7 +55,8 @@ executable platformexs-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , parsec
+    , megaparsec
+    , mtl
     , platformexs
     , text
   default-language: Haskell2010
@@ -75,7 +77,8 @@ test-suite platformexs-test
   build-depends:
       base >=4.7 && <5
     , hspec
-    , parsec
+    , megaparsec
+    , mtl
     , platformexs
     , text
   default-language: Haskell2010
