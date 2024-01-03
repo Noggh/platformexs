@@ -3,7 +3,6 @@ module RunLengthSpec (runLengthSpecs) where
 
 import Data.Foldable     (for_)
 import Test.Hspec        (Spec, describe, it, shouldBe)
-import Test.Hspec.Runner (configFailFast, defaultConfig, hspecWith)
 import Exercism.RunLength (encode, decode)
 
 runLengthSpecs :: Spec
