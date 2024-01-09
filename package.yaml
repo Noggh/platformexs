@@ -24,6 +24,7 @@ dependencies:
 - text
 - megaparsec
 - mtl
+- time
 
 ghc-options:
 - -Wall
