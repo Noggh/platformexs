@@ -1,5 +1,6 @@
 import           BobSpec           (bobSpecs)
 import           LuhnSpec          (luhnSpecs)
+import           PersonLensSpec    (personLensSpecs)
 import           RunLengthSpec     (runLengthSpecs)
 import           Test.Hspec        (Spec)
 import           Test.Hspec.Runner (configFailFast, defaultConfig, hspecWith)
@@ -13,6 +14,7 @@ mainSpecs :: Spec
 mainSpecs = do
     bobSpecs
     luhnSpecs
+    personLensSpecs
     runLengthSpecs
     wordCountSpecs
     wordySpecs

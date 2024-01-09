@@ -25,6 +25,7 @@ dependencies:
 - megaparsec
 - mtl
 - time
+- lens
 
 ghc-options:
 - -Wall
